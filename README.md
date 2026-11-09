@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# 밥피엔스 (Babpiens)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+미각을 깨우는 맞춤형 음식 메뉴 추천 서비스입니다. 위치 기반 추천과 오프라인 접근성을 지원하는 PWA로 만들었습니다.
 
-Currently, two official plugins are available:
+- 배포: https://babpiens2024.vercel.app
+- 기간: 2024.08 ~ 2024.10
+- 현황: 사업팀 예산 부족으로 상용화는 진행하지 못했습니다. 서비스 종료 후 Vercel에서 화면만 유지하고 있습니다.
+- 역할: 프론트엔드 구현, 클라우드 인프라 구축, 검색엔진 최적화 (팀 프로젝트)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 주요 기능
+- 맞춤형 메뉴 추천
+- Kakao Map API 기반 위치 연동
+- PWA: 설치 가능, 오프라인 접근성 지원
+- 검색엔진 최적화: Google·Naver 검색 등록
 
-## Expanding the ESLint configuration
+## 인프라
+- AWS EC2, CloudFront, Route53으로 배포 구성
+- 구글·네이버 검색엔진 등록과 SEO 설정
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 기술 스택
+React · TypeScript · Tailwind CSS · Firebase · Kakao Map API · PWA · AWS EC2 · CloudFront · Route53
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## 로컬 실행
+```bash
+npm install
+npm run dev        # 개발 서버
+npm run build      # 타입 체크 + 프로덕션 빌드
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Firebase 설정 값은 `VITE_FIREBASE_*` 환경 변수로 읽습니다. 실제 값은 리포지토리에 포함하지 않습니다.
